@@ -25,7 +25,7 @@ pygame.font.init()
 DEBUG_FONT = pygame.font.Font(None, 22)
 
 
-def load_file_or_surface(obj):
+def get_surface(obj):
     """ Returns a Surface representing the parameter.
 
     if obj is the filename of an image, a surface containing the image will be returned.
