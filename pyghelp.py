@@ -83,7 +83,7 @@ def get_color(obj):
     except ValueError:
         if isinstance(obj, basestring): # Invalid color name
             raise
-        elif len(obj) not in [3, 4]:
+        elif len(obj) not in range(1, 5):
             raise ValueError('Object does not represent a color')
         else:
             return obj
