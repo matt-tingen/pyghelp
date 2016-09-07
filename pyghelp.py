@@ -52,7 +52,7 @@ def blit_anchors(dest, dest_anchor, src, src_anchor):
     except ValueError:
         pass # Assume dest_anchor is already a point. If not, it will fail in the map().
 
-    topleft = map(lambda a,b,c: a - b + c, src.get_rect().topleft, src_anchor, dest_anchor)
+    topleft = list(map(lambda a,b,c: a - b + c, src.get_rect().topleft, src_anchor, dest_anchor))
     dest.blit(src, topleft)
 
 
@@ -126,7 +126,7 @@ def offset(point, offset):
     """ Offsets a point by an amount.
     Equivalent to adding vectors.
     """
-    return map(sum, zip(point, offset))
+    return tuple(map(sum, zip(point, offset)))
 
 
 def rect_largest_fit(inner, outer):
