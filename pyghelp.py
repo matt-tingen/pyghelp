@@ -22,14 +22,14 @@ def get_anchor(obj, anchor):
     """ Returns the point representing the anchor on the given Surface or Rect.
 
     obj can be a Surface or Rect.
-    anchor should be a string of one of the point attributes (e.g. 'topleft', 
+    anchor should be a string of one of the point attributes (e.g. 'topleft',
         'center', 'midbottom', etc.).
     """
 
     if anchor not in ['topleft', 'bottomleft', 'topright', 'bottomright',
                       'midtop', 'midleft', 'midbottom', 'midright', 'center']:
         raise ValueError('Invalid anchor')
-        
+
     try:
         return getattr(obj.get_rect(), anchor)
     except AttributeError:
